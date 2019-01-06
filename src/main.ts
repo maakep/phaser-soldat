@@ -13,10 +13,11 @@ class Main extends Phaser.Game {
     };
     super(config);
 
-    this.scene.add("boot", Boot, false);
     this.scene.add("preload", Preload, false);
+    this.scene.add("boot", Boot, false);
     this.scene.add("game", Game, false);
-    this.scene.start("preload");
+    
+    this.scene.start("boot");
   }
 }
 
