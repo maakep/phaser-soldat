@@ -16,11 +16,12 @@ export class Preload extends Phaser.Scene {
   preload () {
     console.log("Load things necessary for Game scene");
     
-    // this.load.tilemapTiledJSON("_World", "/assets/map/BasicMap.json");
-    // this.load.spritesheet("_TileKey", "/assets/map/BasicTileset.png", { frameHeight: 16, frameWidth: 16 });
+    this.load.tilemapTiledJSON("_World", "/assets/map/BasicMap.json");
+    this.load.spritesheet("_TileKey", "/assets/map/BasicTileset.png", { frameHeight: 16, frameWidth: 16 });
+    
   }
 
-  creat() {
-    this.scene.start("game");
+  create() {
+    this.scene.start("_GameScene");
   }
 }
