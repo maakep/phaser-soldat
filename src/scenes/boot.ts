@@ -4,14 +4,15 @@ import Log from "../Utility/Log";
 export class Boot extends Phaser.Scene {
   constructor() {
     super({ key: "_BootScene", active: true });
+    Log("Starting Boot Scene");
   }
 
   init() {
-    Log("Booting");
+    console.log("Boot init");
   }
 
   preload () {
-    Log("Load things necessary during preload scene");
+    Log("Boot preload");
   }
 
   create() {

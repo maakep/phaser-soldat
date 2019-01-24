@@ -2,22 +2,19 @@ import * as Phaser from "phaser";
 import Log from "../Utility/Log";
 
 export class Preload extends Phaser.Scene {
-  /**
-   *
-   */
   constructor() {
     super({ key: "_PreloadScene", active: true });
+    Log("Starting Preload Scene");
   }
 
   init() {
-    console.log("Preloading");
+    console.log("Preload init");
   }
 
   preload () {
-    console.log("Load things necessary for Game scene");
+    console.log("Preload preload");
     
-    this.load.tilemapTiledJSON("_World", "/assets/map/BasicMap.json");
-    this.load.spritesheet("_TileKey", "/assets/map/BasicTileset.png", { frameHeight: 16, frameWidth: 16 });
+    // this.load.tilemapTiledJSON("_World", "/assets/map/BasicMap.json");
     
   }
 
