@@ -8,6 +8,7 @@ export function InitializeWorld(scene: Phaser.Scene) : Phaser.Tilemaps.StaticTil
   let groundLayer = map.createStaticLayer(0, tiles, 0, 0);
   groundLayer.setCollisionByProperty({ collider: true }, true);
 
+  // Haven't added physics yet
   // scene.physics.world.bounds.width = groundLayer.width;
   // scene.physics.world.bounds.height = groundLayer.height;
 

@@ -9,13 +9,10 @@ class Main extends Phaser.Game {
     const config: GameConfig = {
       type: Phaser.AUTO,
       width: 800,
-      height: 600,  
+      height: 600,
+      scene: [Boot, Preload, Game]
     };
     super(config);
-
-    this.scene.add("_BootScene", Boot, false);
-    this.scene.add("_PreloadScene", Preload, false);
-    this.scene.add("_GameScene", Game, false);
     
     this.scene.start("_BootScene");
   }

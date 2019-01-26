@@ -3,8 +3,8 @@ import Log from "../Utility/Log";
 
 export class Boot extends Phaser.Scene {
   constructor() {
-    super({ key: "_BootScene", active: true });
-    Log("Starting Boot Scene");
+    super({ key: "_BootScene" });
+    Log("Constructor Boot Scene");
   }
 
   init() {
@@ -12,7 +12,7 @@ export class Boot extends Phaser.Scene {
   }
 
   preload () {
-    Log("Boot preload");
+    console.log("Boot preload");
   }
 
   create() {
