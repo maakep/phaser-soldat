@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
       "target": "es5",
+      "lib": ["es2015", "dom"],
       "module": "commonjs",
-      "strict": true,
+      "strict": false,
       "allowSyntheticDefaultImports": true
     }
   }
