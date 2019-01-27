@@ -8,9 +8,13 @@ class Main extends Phaser.Game {
   constructor() {
     const config: GameConfig = {
       type: Phaser.AUTO,
-      width: 800,
-      height: 600,
-      scene: [Boot, Preload, Game]
+      width: 1200,
+      height: 900,
+      scene: [Boot, Preload, Game],
+      physics: { 
+        default: 'arcade', 
+      } as PhysicsConfig,
+
     };
     super(config);
     
