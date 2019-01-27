@@ -23,7 +23,7 @@ export class Player extends Unit {
   Update() {
     const body = this.body as Phaser.Physics.Arcade.Body;
     this.HandleMovement(body);
-    this.rotation = Phaser.Math.Angle.Between(this.x, this.y, this.mouse.x, this.mouse.y);
+    this.rotation = Phaser.Math.Angle.Between(this.x, this.y, this.mouse.worldX, this.mouse.worldY);
   }
 
   Shoot() {

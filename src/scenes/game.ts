@@ -3,6 +3,7 @@ import Log from "../Utility/Log";
 import { InitializeWorld } from "../World/world";
 import { Player } from "../Unit/Player/player";
 import { Grunt } from "../Unit/Enemy/Grunt";
+import { Do } from "../Utility/do";
 
 export class Game extends Phaser.Scene {
   player: Player;
@@ -26,7 +27,9 @@ export class Game extends Phaser.Scene {
     this.cameras.main.startFollow(this.player, true);
     
     // Enemy
-    new Grunt({scene: this, x: 100, y: 100});
+    Do(10, () => {
+      new Grunt({scene: this, x: Phaser.Math.Between(20, 1400), y: Phaser.Math.Between(20, 1400)});
+    });
   }
 
   update() {
