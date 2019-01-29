@@ -4,6 +4,7 @@ import { InitializeWorld } from "../World/world";
 import { Player } from "../Unit/Player/player";
 import { Grunt } from "../Unit/Enemy/Grunt";
 import { Do } from "../Utility/do";
+import { Spawner } from "../Unit/Enemy/Spawner";
 
 export class Game extends Phaser.Scene {
   player: Player;
@@ -26,8 +27,10 @@ export class Game extends Phaser.Scene {
     this.player = new Player({scene: this, x: 30, y: 30});
     this.cameras.main.startFollow(this.player, true);
     
+
     // Enemy
-    Do(10, () => {
+    new Spawner({scene: this, x: 50, y: 50});
+    Do(1000, () => {
       new Grunt({scene: this, x: Phaser.Math.Between(20, 1400), y: Phaser.Math.Between(20, 1400)});
     });
   }

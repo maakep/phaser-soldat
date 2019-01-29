@@ -12,7 +12,7 @@ class Main extends Phaser.Game {
       height: 900,
       scene: [Boot, Preload, Game],
       physics: { 
-        default: 'arcade', 
+        default: 'arcade',
       } as PhysicsConfig,
 
     };

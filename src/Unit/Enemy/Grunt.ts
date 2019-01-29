@@ -5,7 +5,6 @@ import { Wait } from "../../Utility/wait";
 export class Grunt extends Unit {
   constructor(sc: ISpriteType) {
     super(sc, "_Units", 0, 30);
-    this.body.velocity.x = 10;
     this.WalkAround();
   }
 
