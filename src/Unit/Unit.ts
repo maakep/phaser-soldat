@@ -17,8 +17,6 @@ export abstract class Unit extends Phaser.Physics.Arcade.Sprite {
     this.Health = health;
     sc.scene.physics.world.enable(this);
     sc.scene.add.existing(this);
-    // TODO: Might need grouping on enemies here
-    sc.scene.physics.add.collider(this, (sc.scene as Game).groundLayer);
   }
 
   abstract Update(): void;

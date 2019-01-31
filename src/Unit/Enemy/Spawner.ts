@@ -1,17 +1,30 @@
 import { Unit } from "../Unit";
 import { ISpriteType } from "../../Utility/types";
 import { Grunt } from "./Grunt";
+import { Game } from "../../scenes/game";
 
 export class Spawner<T extends Unit> extends Unit {
-  
+  game: Game; 
+
   constructor(sc: ISpriteType) {
     super(sc, "_Units", 2, 100);
+    this.game = sc.scene as Game;
+
     this.setScale(3, 3);
-    sc.scene.time.addEvent({ delay: 1000, callback: this.Spawn, callbackScope: this });
+    
+    const eventConfig: TimerEventConfig = { 
+      delay: 2500,
+      callback: this.Spawn,
+      callbackScope: this,
+      loop: true,
+    };
+    sc.scene.time.addEvent(eventConfig);
   }
 
   Spawn(): Unit {
-    return new Grunt({scene: this.scene, x: this.x, y: this.y});
+    var unit = new Grunt({scene: this.scene, x: this.x, y: this.y + 30});
+    this.game.enemies.add(unit);
+    return unit
   }
 
   Update(): void {
