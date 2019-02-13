@@ -7,10 +7,11 @@ export class Projectile extends Phaser.Physics.Arcade.Sprite {
     this.setScale(0.2, 0.2);
 
     sc.scene.physics.world.enable(this);
-    sc.scene.add.existing(this);
     sc.scene.physics.add.overlap(this, (sc.scene as Game).groundLayer, (collider) => this.hitWall);
     sc.scene.physics.add.overlap(this, (sc.scene as Game).enemies, (collider) => this.hitEnemy);
-
+    
+    sc.scene.add.existing(this);
+    
     this.body.velocity.x = xvel;
     this.body.velocity.y = yvel;
   }

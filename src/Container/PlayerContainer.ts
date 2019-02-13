@@ -1,17 +1,19 @@
 import { Container } from ".";
 import { ISpriteType } from "../Utility/types";
 import { IControls } from "../Unit/Player/controls";
+import { Game } from "../scenes/game";
 
 export class PlayerContainer extends Container {
-  controls: IControls;
-  mouse: Phaser.Input.Pointer;
-  speed = 70;
+  private controls: IControls;
+  private mouse: Phaser.Input.Pointer;
+  public speed = 70;
 
   constructor(sc: ISpriteType, children?: Phaser.GameObjects.GameObject[]) {
     super(sc, children);
     this.InitializeControls();
     this.mouse = this.scene.input.mousePointer;
     this.scene.physics.world.enable(this);
+    (this.body as Phaser.Physics.Arcade.Body).setSize(30, 30);
   }
 
   Update() {

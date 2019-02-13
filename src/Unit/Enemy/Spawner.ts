@@ -3,13 +3,13 @@ import { ISpriteType } from "../../Utility/types";
 import { Grunt } from "./Grunt";
 import { Game } from "../../scenes/game";
 
-export class Spawner<T extends Unit> extends Unit {
+export class Spawner extends Unit {
   game: Game; 
 
   constructor(sc: ISpriteType) {
     super(sc, "_Units", 2, 100);
     this.game = sc.scene as Game;
-
+  
     this.setScale(3, 3);
     
     const eventConfig: TimerEventConfig = { 

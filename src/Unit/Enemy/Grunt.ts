@@ -5,13 +5,16 @@ import { Wait } from "../../Utility/wait";
 export class Grunt extends Unit {
   constructor(sc: ISpriteType) {
     super(sc, "_Units", 0, 30);
+    sc.scene.physics.world.enable(this);
     this.WalkAround();
   }
 
   async WalkAround() {
     const vel = Phaser.Math.RandomXY(new Phaser.Math.Vector2(0, 0));
-    this.body.velocity.x = vel.x * 30;
-    this.body.velocity.y = vel.y * 30;
+    const body = this.body as Phaser.Physics.Arcade.Body;
+
+    body.velocity.x = vel.x * 30;
+    body.velocity.y = vel.y * 30;
     await Wait(1000);
     this.WalkAround();
   }

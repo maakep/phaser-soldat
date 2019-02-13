@@ -16,8 +16,8 @@ export class Player extends Unit {
     var {scene, x, y } = sc;
 
     scene.input.on("pointerdown", (pointer: PointerEvent) => {
-      var dirX = pointer.x - this.x;
-      var dirY = pointer.y - this.y;
+      var dirX = pointer.x - this.parentContainer.x;
+      var dirY = pointer.y - this.parentContainer.y;
       this.Shoot(dirX, dirY);
     });
   }
