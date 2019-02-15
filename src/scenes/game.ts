@@ -32,7 +32,7 @@ export class Game extends Phaser.Scene {
     this.player = new Player({scene: this, x: 0, y: 0});
     this.cameras.main.startFollow(this.player, true);
 
-    var weapon = new Gun({scene: this, x: this.player.x, y: this.player.y+3});
+    var weapon = new Gun({scene: this, x: this.player.x, y: this.player.y});
     this.player.weapon = weapon;
     
     this.playerContainer = new PlayerContainer({scene: this, x: 150, y: 150}, [this.player, weapon]);
