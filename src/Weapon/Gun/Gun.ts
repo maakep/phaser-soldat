@@ -8,11 +8,12 @@ export class Gun extends Weapon {
 
   constructor(sc: ISpriteType) {
     super(sc);
+    this.damage = 10;
   }
 
   Shoot(xvel: number, yvel: number) {
     const sc: ISpriteType = { scene: this.scene, x: this.parentContainer.x, y: this.parentContainer.y };
     const direction = normalize(xvel, yvel);
-    new Projectile(sc, direction.x * this.speed, direction.y * this.speed);
+    new Projectile(sc, direction.x * this.speed, direction.y * this.speed, this);
   }
 }

@@ -4,11 +4,13 @@ import { Grunt } from "./Grunt";
 import { Game } from "../../scenes/game";
 
 export class Spawner extends Unit {
-  game: Game; 
+  game: Game;
+  event: Phaser.Time.TimerEvent;
 
   constructor(sc: ISpriteType) {
     super(sc, "_Units", 2, 100);
     this.game = sc.scene as Game;
+    this.Health = 200;
   
     this.setScale(3, 3);
     
@@ -18,7 +20,7 @@ export class Spawner extends Unit {
       callbackScope: this,
       loop: true,
     };
-    sc.scene.time.addEvent(eventConfig);
+    this.event = sc.scene.time.addEvent(eventConfig);
   }
 
   Spawn(): Unit {
@@ -32,6 +34,7 @@ export class Spawner extends Unit {
   }
   
   OnDeath(): void {
+    event.stopPropagation();
     this.destroy();
   }
 }
