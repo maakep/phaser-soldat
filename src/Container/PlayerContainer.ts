@@ -13,7 +13,9 @@ export class PlayerContainer extends Container {
     this.InitializeControls();
     this.mouse = this.scene.input.mousePointer;
     this.scene.physics.world.enable(this);
-    (this.body as Phaser.Physics.Arcade.Body).setSize(30, 30);
+    const body = this.body as Phaser.Physics.Arcade.Body;
+    body.setSize(16, 16);
+    body.setOffset(-9, -9);
   }
 
   Update() {

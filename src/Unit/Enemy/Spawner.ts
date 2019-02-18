@@ -34,7 +34,7 @@ export class Spawner extends Unit {
   }
   
   OnDeath(): void {
-    event.stopPropagation();
+    this.event.destroy();
     this.destroy();
   }
 }
