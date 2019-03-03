@@ -21,13 +21,13 @@ export class Grunt extends Unit {
 
     body.velocity.x = vel.x * 30;
     body.velocity.y = vel.y * 30;
-    
+
     await Wait(1000);
     this.WalkAround();
   }
 
   Update(): void {
-    
+
   }
 
   OnDeath(): void {
